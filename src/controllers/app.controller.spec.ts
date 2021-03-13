@@ -17,8 +17,8 @@ describe('AppController', () => {
   })
 
   describe('root', () => {
-    it('should return "Prisma example using NestJS."', () => {
-      expect(appController.getHello()).toBe('Prisma example using NestJS.')
+    it('should return "Hello, world!"', () => {
+      expect(appController.getHello()).toBe('Hello, world!')
     })
   })
   describe('hello/:name', () => {

@@ -1,4 +1,4 @@
-[![Test](https://github.com/Wang-Cankun/iris3-backend/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/Wang-Cankun/iris3-backend/actions/workflows/test.yml)  [![codecov](https://codecov.io/gh/Wang-Cankun/iris3-backend/branch/master/graph/badge.svg?token=JeKFL0ql43)](https://codecov.io/gh/Wang-Cankun/iris3-backend)
+[![Test](https://github.com/Wang-Cankun/iris3-backend/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Wang-Cankun/iris3-backend/actions/workflows/test.yml)  [![codecov](https://codecov.io/gh/Wang-Cankun/iris3-backend/branch/master/graph/badge.svg?token=JeKFL0ql43)](https://codecov.io/gh/Wang-Cankun/iris3-backend)
 # iris3-backend
 
 ## Description
