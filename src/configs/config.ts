@@ -17,11 +17,11 @@ const config: Config = {
   graphql: {
     playgroundEnabled: true,
     debug: true,
-    schemaDestination: './src/schema.graphql',
+    schemaDestination: '../src/schema.graphql',
     sortSchema: true
   },
   security: {
-    expiresIn: '2m',
+    expiresIn: '7d',
     refreshIn: '7d',
     bcryptSaltOrRound: 10
   }

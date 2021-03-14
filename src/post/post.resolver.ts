@@ -1,12 +1,12 @@
-import { PrismaService } from './../../services/prisma.service'
-import { PaginationArgs } from '../../common/pagination/pagination.args'
-import { PostIdArgs } from '../../models/args/post-id.args'
-import { UserIdArgs } from '../../models/args/user-id.args'
-import { Resolver, Query, Parent, Args, ResolveField } from '@nestjs/graphql'
-import { Post } from '../../models/post.model'
-import { PostOrder } from '../../models/inputs/post-order.input'
 import { findManyCursorConnection } from '@devoxa/prisma-relay-cursor-connection'
-import { PostConnection } from '../../models/pagination/post-connection.model'
+import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql'
+import { PaginationArgs } from '../common/pagination/pagination.args'
+import { PostIdArgs } from './model/args/post-id.args'
+import { UserIdArgs } from './model/args/user-id.args'
+import { PrismaService } from '../prisma/prisma.service'
+import { Post } from './model/post.model'
+import { PostOrder } from './model/inputs/post-order.input'
+import { PostConnection } from './model/pagination/post-connection.model'
 
 @Resolver((of) => Post)
 export class PostResolver {

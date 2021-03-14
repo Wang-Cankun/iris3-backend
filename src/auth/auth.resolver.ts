@@ -1,11 +1,11 @@
-import { Auth } from '../../models/auth.model'
-import { Token } from '../../models/token.model'
+import { Args, Mutation, Parent, ResolveField, Resolver } from '@nestjs/graphql'
+import { Auth } from './model/auth.model'
+import { AuthService } from './auth.service'
 import { LoginInput } from './dto/login.input'
-import { Resolver, Mutation, Args, Parent, ResolveField } from '@nestjs/graphql'
-import { AuthService } from '../../services/auth.service'
 import { SignupInput } from './dto/signup.input'
+import { Token } from './model/token.model'
 
-@Resolver((of) => Auth)
+@Resolver((_) => Auth)
 export class AuthResolver {
   constructor(private readonly auth: AuthService) {}
 

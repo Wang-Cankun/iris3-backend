@@ -1,15 +1,15 @@
-import { GraphQLModule } from '@nestjs/graphql'
 import { Module } from '@nestjs/common'
-import { AppController } from './controllers/app.controller'
-import { AppService } from './services/app.service'
-import { AuthModule } from './resolvers/auth/auth.module'
-import { UserModule } from './resolvers/user/user.module'
-import { PostModule } from './resolvers/post/post.module'
-import { AppResolver } from './resolvers/app.resolver'
-import { DateScalar } from './common/scalars/date.scalar'
 import { ConfigModule, ConfigService } from '@nestjs/config'
-import config from './configs/config'
-import { GraphqlConfig } from './configs/config.interface'
+import { GraphQLModule } from '@nestjs/graphql'
+import { AuthModule } from '../auth/auth.module'
+import { DateScalar } from '../common/scalars/date.scalar'
+import config from '../configs/config'
+import { GraphqlConfig } from '../configs/config.interface'
+import { PostModule } from '../post/post.module'
+import { UserModule } from '../user/user.module'
+import { AppController } from './app.controller'
+import { AppResolver } from './app.resolver'
+import { AppService } from './app.service'
 
 @Module({
   imports: [
@@ -23,7 +23,7 @@ import { GraphqlConfig } from './configs/config.interface'
           },
           sortSchema: graphqlConfig.sortSchema,
           autoSchemaFile:
-            graphqlConfig.schemaDestination || './src/schema.graphql',
+            graphqlConfig.schemaDestination || '../src/schema.graphql',
           debug: graphqlConfig.debug,
           playground: graphqlConfig.playgroundEnabled,
           context: ({ req }) => ({ req })
