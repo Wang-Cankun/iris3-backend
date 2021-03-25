@@ -5,6 +5,7 @@ import { AuthModule } from '../auth/auth.module'
 import { DateScalar } from '../common/scalars/date.scalar'
 import config from '../configs/config'
 import { GraphqlConfig } from '../configs/config.interface'
+import { ExampleModule } from '../example/example.module'
 import { PostModule } from '../post/post.module'
 import { UserModule } from '../user/user.module'
 import { AppController } from './app.controller'
@@ -26,14 +27,23 @@ import { AppService } from './app.service'
             graphqlConfig.schemaDestination || '../src/schema.graphql',
           debug: graphqlConfig.debug,
           playground: graphqlConfig.playgroundEnabled,
-          context: ({ req }) => ({ req })
+          installSubscriptionHandlers: graphqlConfig.subscriptionEnabled,
+          context: async ({ req, connection }) => {
+            // subscriptions
+            if (connection) {
+              return { req: connection.context }
+            }
+            // queries and mutations
+            return { req }
+          }
         }
       },
       inject: [ConfigService]
     }),
     AuthModule,
     UserModule,
-    PostModule
+    PostModule,
+    ExampleModule
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver, DateScalar]

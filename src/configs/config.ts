@@ -9,16 +9,17 @@ const config: Config = {
   },
   swagger: {
     enabled: true,
-    title: 'IRIS3 backend',
-    description: 'The IRIS3 backend API description',
-    version: '0.1',
+    title: 'Nestjs FTW',
+    description: 'The nestjs API description',
+    version: '1.5',
     path: 'api'
   },
   graphql: {
     playgroundEnabled: true,
     debug: true,
-    schemaDestination: '../src/schema.graphql',
-    sortSchema: true
+    schemaDestination: './schema.graphql',
+    sortSchema: true,
+    subscriptionEnabled: true
   },
   security: {
     expiresIn: '7d',
