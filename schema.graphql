@@ -21,7 +21,7 @@ scalar Date
 
 type Example {
   id: Int!
-  result: Int
+  result: [String!]
   type: String
 }
 

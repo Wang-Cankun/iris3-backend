@@ -27,7 +27,11 @@ export class ExampleResolver {
 
   @Query((returns) => Example, { name: 'example' })
   async getexample(@Args() args: GetExampleArgs): Promise<Example> {
-    const example = await { id: args.id, type: 'cluster', result: 123 }
+    const example = await {
+      id: args.id,
+      type: 'cluster',
+      result: ['query result1', 'example result2']
+    }
     pubSub.publish('EXAMPLE_QUERY', { subExample: example })
     return example
   }
@@ -46,7 +50,7 @@ export class ExampleResolver {
     const example = await {
       id: updateExampleData.id,
       type: 'qc',
-      result: 456
+      result: ['query result1', 'example result2', 'example result3']
     }
     console.log(updateExampleData)
     pubSub.publish('EXAMPLE_MUTATION', { subExample: example })

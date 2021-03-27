@@ -8,6 +8,6 @@ export class Example {
   @Field({ nullable: true })
   type?: string
 
-  @Field({ nullable: true })
-  result?: number
+  @Field((type) => [String], { nullable: true })
+  result?: string[]
 }
